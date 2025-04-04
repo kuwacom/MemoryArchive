@@ -85,16 +85,22 @@
   </style>
 </head>
 <body class="min-h-screen">
-  <!-- Navigation -->
-  <nav class="p-6 backdrop-blur-md bg-white/10 fixed w-full top-0 z-99">
-    <div class="container mx-auto flex justify-between items-center">
+<!-- Navigation -->
+<nav class="p-6 backdrop-blur-md bg-white/10 fixed w-full top-0 z-99">
+  <div class="container mx-auto flex justify-between items-center">
+    <div class="flex items-center space-x-4">
+      <!-- ロゴ（md以上で表示） -->
+      <img src="/icon.png" alt="MemoryArchive" 
+        class="hidden md:block h-8 w-auto transition-transform hover:scale-105">
+      
+      <!-- サイトタイトル -->
       <h1 class="text-3xl font-extrabold">
         <span class="title-gradient">MemoryArchive</span>
       </h1>
-      <p class="text-[#202b32]/80">気まぐれアーカイブコレクション</p>
     </div>
-  </nav>
-
+    <p class="text-[#202b32]/80">気まぐれアーカイブコレクション</p>
+  </div>
+</nav>
   <!-- Hero Section -->
   <section class="mt-16 pt-20 pb-12 px-4 animate-fade-in-up delay-75">
     <div class="container mx-auto max-w-3xl text-center bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-xl">
