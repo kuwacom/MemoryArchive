@@ -2,3 +2,6 @@
 [submodule "archive/MineralNaturalLife-Archive"]
 	path = archive/MineralNaturalLife-Archive
 	url = https://github.com/kuwacom/MineralNaturalLife-Archive.git
+[submodule "archive/BlueArchive-ToSchool"]
+	path = archive/BlueArchive-ToSchool
+	url = https://github.com/kuwacom/BlueArchive-ToSchool.git
