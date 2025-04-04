@@ -33,6 +33,14 @@
 
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <style>
+    @font-face {
+      font-family: 'SmartFont';
+      src: url('./スマートフォントUI.otf') format('opentype');
+    }
+    body {
+      font-family: 'SmartFont', sans-serif;
+    }
+
     @keyframes gradientShift {
       0% { background-position: 0% 50%; }
       50% { background-position: 100% 50%; }
@@ -143,7 +151,7 @@
         hover:shadow-2xl hover:translate-y-[-4px] hover:scale-[1.02]
         active:scale-95 active:animate-card-pop
         animate-fade-in-up delay-100">
-        <div class="absolute top-4 right-4 text-sm text-[#202b32]/70">
+        <div class="absolute top-7 right-6 text-sm text-[#202b32]/70">
           2025/04/01
         </div>
         <div class="absolute inset-0 bg-gradient-to-br from-[#a19eff55] to-[#ff9efb55] rounded-2xl opacity-0 
@@ -169,7 +177,7 @@
         hover:shadow-2xl hover:translate-y-[-4px] hover:scale-[1.02]
         active:scale-95 active:animate-card-pop
         animate-fade-in-up delay-200">
-        <div class="absolute top-4 right-4 text-sm text-[#202b32]/70">
+        <div class="absolute top-7 right-6 text-sm text-[#202b32]/70">
           2025/04/01
         </div>
         <div class="absolute inset-0 bg-gradient-to-br from-[#a19eff55] to-[#ff9efb55] rounded-2xl opacity-0 
