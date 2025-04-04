@@ -1,3 +1,4 @@
-[submodule "MineralNaturalLife-Archive"]
-	path = MineralNaturalLife-Archive
+
+[submodule "archive/MineralNaturalLife-Archive"]
+	path = archive/MineralNaturalLife-Archive
 	url = https://github.com/kuwacom/MineralNaturalLife-Archive.git
