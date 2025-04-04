@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MemoryArchive</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <style>
+    @keyframes gradientShift {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    @keyframes cardPop {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.03); }
+      100% { transform: scale(1); }
+    }
+    .animate-card-pop {
+      animation: cardPop 0.3s cubic-bezier(0.22, 0.61, 0.36, 1);
+    }
+    body {
+      background: linear-gradient(135deg, #7be7ff, #e0ff8b);
+      background-size: 200% 200%;
+      animation: gradientShift 8s ease infinite;
+    }
+    .title-gradient {
+      background: linear-gradient(135deg, #a19eff 0%, #ff9efb 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+    .archive-card {
+      transform: translateZ(0);
+      backface-visibility: hidden;
+      will-change: transform, box-shadow;
+    }
+
+    @keyframes textGradient {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .animated-gradient-text {
+      background: linear-gradient(135deg, #8884ff, #ec76c9, #60e2ff);
+      background-size: 300% 300%;
+      animation: textGradient 6s ease infinite;
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    @keyframes bounce-slow {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-2px); }
+    }
+    .animate-bounce-slow {
+      animation: bounce-slow 4s ease-in-out infinite;
+    }
+  </style>
+</head>
+<body class="min-h-screen">
+  <!-- Navigation -->
+  <nav class="p-6 backdrop-blur-md bg-white/10 fixed w-full top-0 z-99">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-3xl font-extrabold">
+        <span class="title-gradient">MemoryArchive</span>
+      </h1>
+      <p class="text-[#202b32]/80">気まぐれアーカイブコレクション</p>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="mt-16 pt-20 pb-12 px-4 animate-fade-in-up delay-75">
+    <div class="container mx-auto max-w-3xl text-center bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-xl">
+
+      <!-- 萌えカウンター -->
+      <div class="mb-6 -mt-4 animate-bounce-slow">
+        <img 
+          src="https://counter.256server.com/memory-archive?theme=moebooru" 
+          alt="訪問者カウンター"
+          class="mx-auto h-32 w-auto drop-shadow-[0_5px_6px_rgba(161,158,255,0.6)] hover:scale-105 transition-transform"
+        >
+      </div>
+
+      <h2 class="text-4xl font-bold mb-6">
+        ✨<span class="title-gradient">Digital Memory Capsule</span>
+      </h2>
+      <p class="text-lg text-[#202b32]/90 leading-relaxed mb-4">
+        MemoryArchiveは、アニメやゲームの限定サイト・貴重なコンテンツを<br>
+        <span class="animated-gradient-text px-1 font-bold">タイムカプセル</span>のように保管する非公式アーカイブです
+      </p>
+      <div class="inline-flex items-center space-x-2 text-[#202b32]/70">
+        <svg class="w-5 h-5 animate-bounce" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
+        </svg>
+        <span>スクロールして閲覧！</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content -->
+  <main class="container mx-auto px-4 pt-24 pb-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Archive Card 1 -->
+      <a href="./MineralNaturalLife-Archive/" class="archive-card group relative bg-white/20 backdrop-blur-sm rounded-2xl p-6 shadow-xl 
+        transition-all duration-300 ease-[cubic-bezier(0.22,0.61,0.36,1)]
+        hover:shadow-2xl hover:translate-y-[-4px] hover:scale-[1.02]
+        active:scale-95 active:animate-card-pop
+        animate-fade-in-up delay-100">
+        <div class="absolute top-4 right-4 text-sm text-[#202b32]/70">
+          2025/04/01
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-br from-[#a19eff55] to-[#ff9efb55] rounded-2xl opacity-0 
+          group-hover:opacity-100 transition-opacity duration-200 ease-out"></div>
+        <div class="relative">
+          <div class="mb-4">
+            <span class="inline-block px-3 py-1 text-sm text-[#202b32] bg-[#d7feff] rounded-full">ゲーム</span>
+            <span class="inline-block px-3 py-1 text-sm text-[#202b32] bg-[#d7feff] rounded-full">アニメ</span>
+          </div>
+          <h2 class="text-2xl font-bold text-[#202b32] mb-2">バンドリ！ 株式会社ミネラル天然ライフ</h2>
+          <p class="text-[#202b32]/80">
+            いつも株式会社ミネラル天然ライフをご利用いただき誠にありがとうございます。
+          </p>
+          <p class="text-[#202b32]/80">
+            バンドリ 2025年のエイプリルフール限定公式Twitterアカウントにて配信された、コールセンター祥子
+          </p>
+        </div>
+      </a>
+
+      <!-- Archive Card 2 -->
+      <a href="#" onclick="alert('ごめんなさい！\nまだ準備できていないみたい...')" class="archive-card group relative bg-white/20 backdrop-blur-sm rounded-2xl p-6 shadow-xl 
+        transition-all duration-300 ease-[cubic-bezier(0.22,0.61,0.36,1)]
+        hover:shadow-2xl hover:translate-y-[-4px] hover:scale-[1.02]
+        active:scale-95 active:animate-card-pop
+        animate-fade-in-up delay-200">
+        <div class="absolute top-4 right-4 text-sm text-[#202b32]/70">
+          2025/04/01
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-br from-[#a19eff55] to-[#ff9efb55] rounded-2xl opacity-0 
+          group-hover:opacity-100 transition-opacity duration-200 ease-out"></div>
+        <div class="relative">
+          <div class="mb-4">
+            <span class="inline-block px-3 py-1 text-sm text-[#202b32] bg-[#d7feff] rounded-full">ゲーム</span>
+            <span class="inline-block px-3 py-1 text-sm text-[#202b32] bg-[#d7feff] rounded-full">準備中...</span>
+          </div>
+          <h2 class="text-2xl font-bold text-[#202b32] mb-2">BlueArchive ToSchool</h2>
+          <p class="text-[#202b32]/80">
+            ToSchool 〜君がそばにいる日常〜
+          </p>
+          <p class="text-[#202b32]/80">
+            正義実現委員会の部員とともに一日を過ごし、新たな絆を築いていこう！
+          </p>
+          <p class="text-[#202b32]/80">
+            ブルーアーカイブ 2025年のエイプリルフール限定公式ゲームのアーカイブ
+          </p>
+        </div>
+      </a>
+
+    </div>
+  </main>
+  
+    <!-- お問い合わせセクション -->
+    <div class="mb-6 flex flex-col space-y-3 items-center justify-center">
+      <p class="text-[#202b32]/80 text-sm mb-4 text-center">
+        アーカイブの追加やその他要望の<br class="md:hidden">お問い合わせはこちら
+      </p>
+      <div class="flex flex-col md:flex-row md:space-x-6 md:items-center justify-center gap-4">
+
+        <div class=" flex items-center space-x-2 bg-[#d7feff]/20 px-4 py-2 rounded-full group hover:bg-[#a19eff]/20 transition-all">
+          <svg class="w-5 h-5 text-[#5865F2]" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M19.27 5.33C17.94 4.71 16.5 4.26 15 4a.09.09 0 0 0-.07.03c-.18.33-.39.76-.53 1.09a16.09 16.09 0 0 0-4.8 0c-.14-.34-.35-.76-.54-1.09c-.01-.02-.04-.03-.07-.03c-1.5.26-2.93.71-4.27 1.33c-.01 0-.02.01-.03.02c-2.72 4.07-3.47 8.03-3.1 11.95c0 .02.01.04.03.05c1.8 1.32 3.53 2.12 5.24 2.65c.03.01.06 0 .07-.02c.4-.55.76-1.13 1.07-1.74c.02-.04 0-.08-.04-.09c-.57-.22-1.11-.48-1.64-.78c-.04-.02-.04-.08-.01-.11c.11-.08.22-.17.33-.25c.02-.02.05-.02.07-.01c3.44 1.57 7.15 1.57 10.55 0c.02-.01.05-.01.07.01c.11.09.22.17.33.26c.04.03.04.09-.01.11c-.52.31-1.07.56-1.64.78c-.04.01-.05.06-.04.09c.32.61.68 1.19 1.07 1.74c.03.01.06.02.09.01c1.72-.53 3.45-1.33 5.25-2.65c.02-.01.03-.03.03-.05c.44-4.53-.73-8.46-3.1-11.95c-.01-.01-.02-.02-.04-.02zM8.52 14.91c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.84 2.12-1.89 2.12zm6.97 0c-1.03 0-1.89-.95-1.89-2.12s.84-2.12 1.89-2.12c1.06 0 1.9.96 1.89 2.12c0 1.17-.83 2.12-1.89 2.12z"/>
+          </svg>
+          <span class="text-[#202b32] group-hover:text-[#5865F2] transition-colors">
+            Discord: <span class="animated-gradient-text font-bold">@kuwamain</span>
+          </span>
+        </div>
+  
+        <a href="https://kuwa.dev" target="_blank" rel="noopener"
+          class="flex items-center space-x-2 bg-[#d7feff]/20 px-4 py-2 rounded-full group hover:bg-[#a19eff]/20 transition-all w-auto mx-auto"
+        >
+          <span class="bg-gradient-to-r from-[#7be7ff] to-[#a19eff] bg-clip-text text-transparent">
+            🔗
+          </span>
+          <span class="text-[#202b32] group-hover:text-[#7be7ff] transition-colors">
+            <span class="animated-gradient-text font-bold">kuwa.dev</span>
+          </span>
+        </a>
+
+      </div>
+    </div>
+
+  <!-- Footer -->
+  <footer class="bg-white/5 backdrop-blur-lg border-t border-white/10 mt-auto">
+    <div class="container mx-auto px-4 py-6">
+      <div class="flex flex-col md:flex-row justify-between items-center gap-4 text-[#202b32]/80">
+        <div class="text-center md:text-left order-2 md:order-1">
+          <p class="text-sm">
+            Copyright © 2025 MemoryArchive | kuwa.dev All Rights Reserved.
+          </p>
+        </div>
+        <div class="order-1 md:order-2">
+          <p class="text-sm font-medium">
+            Powered By <span class="animated-gradient-text">kuwa.app</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+</body>
+</html>
